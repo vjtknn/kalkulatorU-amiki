@@ -97,6 +97,7 @@
             this.button5.TabIndex = 4;
             this.button5.Text = "Czyść";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -138,6 +139,7 @@
             // 
             // textBox5
             // 
+            this.textBox5.BackColor = System.Drawing.SystemColors.Window;
             this.textBox5.Location = new System.Drawing.Point(243, 40);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(78, 20);
@@ -217,6 +219,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(573, 166);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.label7);

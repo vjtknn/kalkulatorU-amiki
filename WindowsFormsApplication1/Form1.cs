@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -25,21 +26,35 @@ namespace WindowsFormsApplication1
 
         }
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
+            textBox5.Clear();
+            textBox6.Clear();
+            textBox7.Clear();
+        }
+
+
+
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int licznik, mianownik;
-            Suma(out licznik, out mianownik);
+            int licznik, mianownik, cala;
+            Suma(out licznik, out mianownik, out cala);
 
             textBox5.Text = licznik.ToString();
             textBox6.Text = mianownik.ToString();
+            textBox7.Text = cala.ToString();
         }
 
-        private void Suma(out int licznik, out int mianownik)
+        private void Suma(out int licznik, out int mianownik, out int cala)
         {
             int licznik1, licznik2, mianownik1, mianownik2;
             Zmienne(out licznik1, out licznik2, out mianownik1, out mianownik2);
-
+            
             if (mianownik1 == mianownik2)
             {
                 licznik = (licznik1 + licznik2);
@@ -48,9 +63,19 @@ namespace WindowsFormsApplication1
             }
             else
             {
-                licznik = (mianownik1 * mianownik2);
-                mianownik = ((licznik1 * mianownik2) + (licznik2 * mianownik1));
+                licznik = ((licznik1 * mianownik2) + (licznik2 * mianownik1));
+                mianownik = (mianownik1*mianownik2);
+
             }
+
+            cala = 0;
+
+            if (licznik > mianownik)
+            {
+                cala = licznik / mianownik;
+                licznik = licznik - mianownik;
+            }
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -128,5 +153,10 @@ namespace WindowsFormsApplication1
             mianownik2 = int.Parse(textBox4.Text);
         }
 
+        /* public void jedenIWiecej(int licznik, int mianownik, out int cala)
+        {     
+                            
+        } */
+        
     }
  }
